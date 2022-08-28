@@ -4,7 +4,7 @@ const todos = document.getElementById('todos');
 
 let allTheTodos = [];
 
-fetch('http://localhost:3000/todos')
+fetch('http://ec2-43-205-214-104.ap-south-1.compute.amazonaws.com:3000/todos')
 .then(data => data.json())
 .then(data => {
     for (let todoItem of data.todos) {
@@ -22,7 +22,7 @@ addButton.addEventListener('click', (e) => {
     todo.className = "list-group-item";
     todos.appendChild(todo);
     const addedTodo = addTodoInput.value;
-    fetch('http://localhost:3000/todos?todo=' + addedTodo , {
+    fetch('http://ec2-43-205-214-104.ap-south-1.compute.amazonaws.com:3000/todos?todo=' + addedTodo , {
         method: "POST"
     })
     addTodoInput.value = "";
