@@ -7,7 +7,7 @@ server.get('/healthcheck', (req,res) => {
 })
 
 
-server.use(cors(['http://localhost:5500']));
+server.use(cors());
 
 const todos = [];
 
